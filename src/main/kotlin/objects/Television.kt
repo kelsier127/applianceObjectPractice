@@ -1,4 +1,4 @@
-package org.example
+package org.example.objects
 
 class Television : Appliances {
     private var size:Int = 28
@@ -21,6 +21,6 @@ class Television : Appliances {
     }
 
     override fun toString(): String {
-        return "Base price: ${this.basePrice} - Final price: ${finalPrice()+sizePrice()} - Color: $color - Consum Type: $consum - Weight: $weight - Size: $size"
+        return "Television: \nBase price: ${this.basePrice}\nFinal price: ${finalPrice()+sizePrice()}\nColor: $color\nConsum Type: $consum\nWeight: $weight\nSize: $size"
     }
 }

@@ -1,4 +1,4 @@
-package org.example
+package org.example.objects
 
 open class Appliances {
     protected var basePrice:Double = 0.0
@@ -43,5 +43,9 @@ open class Appliances {
 
     fun finalPrice():Double{
         return weigthPrice()+consumptionPrice()+this.basePrice
+    }
+
+    override fun toString(): String {
+        return "Base price: ${this.basePrice}\nFinal price: ${finalPrice()}\nColor: $color\nConsum Type: $consum\nWeight: $weight"
     }
 }
