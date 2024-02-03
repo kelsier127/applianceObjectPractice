@@ -1,20 +1,22 @@
 package org.example
 
 open class Appliances {
-    private var basePrice:Double
-    private var color:String = "Blanc"
-    private var consum:Char = 'G'
-    private var weight:Double = 5.0
+    protected var basePrice:Double = 0.0
+    protected var color:String = "Blanc"
+    protected var consum:Char = 'G'
+    protected var weight:Double = 5.0
 
-    constructor(basePrice:Double,color: String,consum:Char,weight:Double){
+
+
+    constructor(basePrice:Double,color: String,consum:Char,weight:Double) {
         this.basePrice=basePrice
         this.color=color
-        this.consum=consum.uppercaseChar()
+        this.consum=consum
         this.weight=weight
     }
 
     private fun consumptionPrice():Double{
-        return when(this.consum){
+        return when(this.consum.uppercaseChar()){
             'A'-> 35.0
             'B'-> 30.0
             'C'-> 25.0
