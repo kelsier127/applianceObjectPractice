@@ -1,51 +1,51 @@
 package org.example.objects
 
 open class Appliances {
-    protected var basePrice:Double = 0.0
+    protected var basePrice:Int = 0
     protected var color:String = "Blanc"
     protected var consum:Char = 'G'
-    protected var weight:Double = 5.0
+    protected var weight:Int = 5
 
 
 
-    constructor(basePrice:Double,color: String,consum:Char,weight:Double) {
+    constructor(basePrice:Int,color: String,consum:Char,weight:Int) {
         this.basePrice=basePrice
         this.color=color
         this.consum=consum
         this.weight=weight
     }
 
-    private fun consumptionPrice():Double{
+    private fun consumptionPrice():Int{
         return when(this.consum.uppercaseChar()){
-            'A'-> 35.0
-            'B'-> 30.0
-            'C'-> 25.0
-            'D'-> 20.0
-            'E'-> 15.0
-            'F'-> 10.0
-            else -> 0.0
+            'A'-> 35
+            'B'-> 30
+            'C'-> 25
+            'D'-> 20
+            'E'-> 15
+            'F'-> 10
+            else -> 0
         }
     }
 
-    private fun weigthPrice():Double{
-        return if (this.weight in 6.0..20.0) {
-            20.0
-        }else if(this.weight in 21.0..50.0){
-            50.0
-        }else if(this.weight in 51.0..80.0){
-            80.0
+    private fun weigthPrice():Int{
+        return if (this.weight in 6..20) {
+            20
+        }else if(this.weight in 21..50){
+            50
+        }else if(this.weight in 51..80){
+            80
         }else if(this.weight > 80){
-            100.0
+            100
         }else{
-            0.0
+            0
         }
     }
 
-    fun finalPrice():Double{
+    fun finalPrice():Int{
         return weigthPrice()+consumptionPrice()+this.basePrice
     }
 
     override fun toString(): String {
-        return "Base price: ${this.basePrice}\nFinal price: ${finalPrice()}\nColor: $color\nConsum Type: $consum\nWeight: $weight"
+        return "Base price: ${this.basePrice}\nFinal price: ${finalPrice()}\nColor: $color\nConsum Type: $consum\nWeight: ${weight}kg"
     }
 }
